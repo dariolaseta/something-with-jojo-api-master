@@ -1,0 +1,26 @@
+<mat-dialog-content>
+    <header><h1>Crea un nuovo personaggio</h1></header>
+
+    <div class="inputs flex flex-col">
+        <mat-form-field>
+            <input matInput placeholder="Inserisci il nome:" [(ngModel)]="name" required>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Inserisci l'abilità:" [(ngModel)]="ability" required>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <mat-label>In vita</mat-label>
+            <mat-select>
+                <mat-option [value]="isAlive">Vivo</mat-option>
+                <mat-option [value]="isAlive">Morto</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" matDialogClose> Annulla </button>
+    <button mat-raised-button color="primary" (click)="closeDialog()"> Salva </button>
+</mat-dialog-actions>

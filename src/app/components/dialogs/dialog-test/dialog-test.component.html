@@ -1,0 +1,11 @@
+<mat-dialog-content>
+    <header><h1>Titolo</h1></header>
+
+    <p>Scrivi qualcosa: </p>
+    <mat-form-field>
+        <input matInput placeholder="Scrivi qualcosa" [(ngModel)]="data">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="closeDialog()">Chiudi</button>
+</mat-dialog-actions>

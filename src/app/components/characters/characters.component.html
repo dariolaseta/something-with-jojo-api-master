@@ -1,0 +1,49 @@
+<div class="container mx-auto" [hidden]="charactersArray.length <= 0">
+    <mat-card class="my-4 w-full">
+        <mat-card-header class="flex justify-between">
+            <div class="search">
+                <mat-form-field>
+                    <input matInput placeholder="Cerca" (keyup)="filterChange($event)">
+                </mat-form-field>
+                
+                <i class="material-icons" matTooltip="Cerca per nome, ID o abilità." matTooltipPosition="right">info_outline</i>
+            </div>
+
+            <div class="create self-center">
+                <button mat-raised-button (click)="openDialog()" color="primary" matTooltip="Crea un nuovo personaggio." matTooltipPosition="left"> Crea nuovo personaggio </button>
+            </div>
+        </mat-card-header>
+
+        <mat-card-content>
+            <!-- Aggiungere matSort per il sort -->
+            <table matSort mat-table [dataSource]="dataSource" class="w-full">
+                <ng-container matColumnDef="id">
+                    <!-- Aggiungere mat-sort-header agli header per il sort -->
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef>No.</th>
+                    <td mat-cell *matCellDef="let element" (click)="onClick(element.id)">{{ element.id }}</td>
+                </ng-container>
+                
+                <ng-container matColumnDef="name">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef>Nome</th>
+                    <td mat-cell *matCellDef="let element" [ngStyle]="{'color': element.living ? 'green' : 'red'}" (click)="onClick(element.id)">{{ element.name }}</td>
+                </ng-container>
+                
+                <ng-container matColumnDef="ability">
+                    <th mat-sort-header mat-header-cell *matHeaderCellDef>Abilità</th>
+                    <td mat-cell *matCellDef="let element" (click)="onClick(element.id)">{{ element.abilities }}</td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+        </mat-card-content>
+
+        <mat-card-footer>
+            <mat-paginator [pageSizeOptions]="pageSize" showFirstLastButtons class="w-full">
+
+            </mat-paginator>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
+<app-loader *ngIf="charactersArray.length <= 0"></app-loader>

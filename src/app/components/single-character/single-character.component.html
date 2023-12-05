@@ -1,0 +1,64 @@
+<div class="container mx-auto" *ngFor="let characters of charactersArray" [hidden]="charactersArray.length <= 0">
+    <mat-card *ngIf="characters.id === id" class="my-4">
+        <mat-card-header>
+            <h1>Nome: {{characters.name}} ( {{ characters.japaneseName }} )</h1>
+        </mat-card-header>
+
+        <img [src]="characters.image" [alt]="characters.name + ' image'">
+        <mat-card-content>
+            <p>Nazionalità: {{characters.nationality}}</p>
+            <p>Abilità: {{characters.abilities}}</p>
+            <p>Appare in: {{ characters.chapter }}</p>
+            
+            <p *ngIf="characters.isHuman; else notHuman">Umano</p>
+            <ng-template #notHuman>
+                <p>Non umano</p>
+            </ng-template>
+
+            <p *ngIf="characters.living; else notAlive" [ngStyle]="{ color: 'green' }">In vita</p>
+            <ng-template #notAlive>
+                <p [ngStyle]="{ color: 'red'}">Deceduto</p>
+            </ng-template>
+
+            <div *ngIf="canEdit">
+                <h2>Modifica</h2>
+
+                <div class="my_inputs flex justify-between">
+                    <mat-form-field class="my_character-name">
+                        <input matInput [(ngModel)]="characters.name" placeholder="Nome" required>
+                    </mat-form-field>
+                    
+                    <mat-form-field class="my_character-nationality">
+                        <input matInput [(ngModel)]="characters.nationality" placeholder="Nazionalità" required>
+                    </mat-form-field>
+    
+                    <mat-form-field class="my_character-abilities">
+                        <input matInput [(ngModel)]="characters.abilities" placeholder="Abilità" required>
+                    </mat-form-field>
+    
+                    <mat-form-field class="my_character-chapters">
+                        <input matInput [(ngModel)]="characters.chapter" placeholder="Capitoli" required>
+                    </mat-form-field>
+    
+                    <mat-form-field class="my_character-human">
+                        <mat-label>Umano</mat-label> 
+                        <mat-select appearance="fill" [value]="characters.isHuman">
+                            <mat-option [value]="characters.isHuman"> Umano </mat-option>
+                            <mat-option [value]="!characters.isHuman"> Non umano </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <button mat-raised-button color="accent" (click)="saveChanges()" matTooltip="Salva" matTooltipPosition="left">Salva</button>
+            </div>
+
+        </mat-card-content>
+
+        <mat-card-footer>
+            <button mat-raised-button color="primary" routerLink="/characters" matTooltip="Indietro">Indietro</button>
+            <button mat-raised-button color="accent" (click)="canEdit = !canEdit" matTooltip="Modifica">Modifica</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
+
+<app-loader *ngIf="charactersArray.length <= 0"></app-loader>
