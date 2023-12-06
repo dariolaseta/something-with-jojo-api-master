@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -25,6 +26,7 @@ export class SingleCharacterComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private apiService: ApiService,
     private snackBar: MatSnackBar,
     private dialog: MatDialog,
@@ -35,6 +37,11 @@ export class SingleCharacterComponent implements OnInit {
 
     this.apiService.getCharactersData().subscribe((response) => {
       this.charactersArray = response;
+
+      if(this.charactersArray[this.id - 1] === undefined){
+        this.router.navigate(['/error']);
+
+      }
     });
   }
 
@@ -53,8 +60,6 @@ export class SingleCharacterComponent implements OnInit {
     this.canEdit = false;
     
     this.successMessage('Salvato con successo.', 'Chiudi');
-
-    console.log("Array aggiornato: ", this.charactersArray);
   }
 
   successMessage(message: string, action: string) :void{

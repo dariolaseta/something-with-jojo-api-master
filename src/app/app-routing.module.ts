@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'characters', component: CharactersComponent},
   {path: 'characters/details/:id', component: SingleCharacterComponent},
+  {path: 'error', component: ErrorComponent},
   {path: '**', pathMatch: 'full', component: ErrorComponent},
 ];
 
