@@ -3,11 +3,11 @@
 
     <div class="inputs flex flex-col">
         <mat-form-field>
-            <input matInput placeholder="Inserisci il nome:" [(ngModel)]="name" required>
+            <input matInput placeholder="Inserisci il nome:" [(ngModel)]="name" (keyup.enter)="closeDialog()" required>
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Inserisci l'abilità:" [(ngModel)]="ability" required>
+            <input matInput placeholder="Inserisci l'abilità:" [(ngModel)]="ability" (keyup.enter)="closeDialog()" required>
         </mat-form-field>
         
         <mat-form-field>

@@ -2,19 +2,19 @@
     <header><h1>Modifica</h1></header>
     <div class="inputs flex flex-col">
         <mat-form-field>
-            <input matInput placeholder="Nome:" [(ngModel)]="data.name" required>
+            <input matInput placeholder="Nome:" [(ngModel)]="data.name" (keyup.enter)="save()" required>
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Abilità:" [(ngModel)]="data.abilities" required>
+            <input matInput placeholder="Abilità:" [(ngModel)]="data.abilities" (keyup.enter)="save()" required>
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Nazionalità:" [(ngModel)]="data.nationality" required>
+            <input matInput placeholder="Nazionalità:" [(ngModel)]="data.nationality" (keyup.enter)="save()" required>
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Capitoli:" [(ngModel)]="data.chapter" required>
+            <input matInput placeholder="Capitoli:" [(ngModel)]="data.chapter" (keyup.enter)="save()" required>
         </mat-form-field>
     </div>
 </mat-dialog-content>
