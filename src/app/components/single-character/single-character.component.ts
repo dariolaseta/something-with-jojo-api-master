@@ -35,7 +35,6 @@ export class SingleCharacterComponent implements OnInit {
 
     this.apiService.getCharactersData().subscribe((response) => {
       this.charactersArray = response;
-      console.log("Array normale: ", this.charactersArray);
     });
   }
 
