@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { CharacterEditComponent } from '../dialogs/character-edit/character-edit.component';
 
 @Component({
   selector: 'app-single-character',
@@ -21,6 +23,7 @@ export class SingleCharacterComponent implements OnInit {
     private route: ActivatedRoute,
     private apiService: ApiService,
     private snackBar: MatSnackBar,
+    private dialog: MatDialog,
     ) { }
 
   ngOnInit(): void {
@@ -53,5 +56,28 @@ export class SingleCharacterComponent implements OnInit {
 
   successMessage(message: string, action: string) :void{
     this.snackBar.open(message, action);
+  }
+
+  openDialog() :void{
+    const dialogRef = this.dialog.open(CharacterEditComponent, {
+      data: {
+        name: this.charactersArray[this.id - 1].name,
+        abilities: this.charactersArray[this.id - 1].abilities,
+        nationality: this.charactersArray[this.id - 1].nationality,
+        chapter: this.charactersArray[this.id - 1].chapter,
+      },
+      width: '700px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result){
+        this.charactersArray[this.id - 1].name = result.name;
+        this.charactersArray[this.id - 1].abilities = result.abilities;
+        this.charactersArray[this.id - 1].nationality = result.nationality;
+        this.charactersArray[this.id - 1].chapter = result.chapter;
+
+        console.log(this.charactersArray)
+      }
+    });
   }
 }

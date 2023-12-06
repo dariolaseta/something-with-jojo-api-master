@@ -31,6 +31,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ErrorComponent } from './components/error/error.component';
 import { DialogTestComponent } from './components/dialogs/dialog-test/dialog-test.component';
 import { TableDialogComponent } from './components/dialogs/table-dialog/table-dialog.component';
+import { CharacterEditComponent } from './components/dialogs/character-edit/character-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { TableDialogComponent } from './components/dialogs/table-dialog/table-di
     ErrorComponent,
     DialogTestComponent,
     TableDialogComponent,
+    CharacterEditComponent,
   ],
   imports: [
     BrowserModule,

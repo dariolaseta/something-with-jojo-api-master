@@ -1,0 +1,25 @@
+<mat-dialog-content>
+    <header><h1>Modifica</h1></header>
+    <div class="inputs flex flex-col">
+        <mat-form-field>
+            <input matInput placeholder="Nome:" [(ngModel)]="data.name" >
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Abilità:" [(ngModel)]="data.abilities">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Nazionalità:" [(ngModel)]="data.nationality">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Capitoli:" [(ngModel)]="data.chapter">
+        </mat-form-field>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Annulla</button>
+    <button mat-raised-button color="primary" (click)="save()">Salva</button>
+</mat-dialog-actions>

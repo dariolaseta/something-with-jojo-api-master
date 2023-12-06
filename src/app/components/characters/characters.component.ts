@@ -73,5 +73,4 @@ export class CharactersComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  //TODO Modifica personaggio effettiva e con dialog
 }
