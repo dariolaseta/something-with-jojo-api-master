@@ -19,7 +19,6 @@ export class DashboardComponent implements OnInit {
     'https://www.icegif.com/wp-content/uploads/icegif-6981.gif',
     'https://media2.giphy.com/media/QyWBTLDn9WHt0FXGJS/giphy.gif',
     'https://37.media.tumblr.com/8dc51f6f7bd120f58806aeaa63a23809/tumblr_n9x82rOKtq1rvyzuho1_500.gif',
-    'https://gifdb.com/images/high/jojo-giorno-giovanna-drink-z2qxrdfb40zf1ud3.gif',
     'https://giffiles.alphacoders.com/202/20227.gif',
     
   ];

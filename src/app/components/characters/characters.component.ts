@@ -53,7 +53,7 @@ export class CharactersComponent implements OnInit {
   openDialog() :void{
     let arrayLength: number = this.charactersArray.length;
     const dialogRef = this.dialog.open(TableDialogComponent, {
-      data: {arrayLength: arrayLength}
+      data: {arrayLength: arrayLength},
     });
 
     dialogRef.afterClosed().subscribe(result => {
