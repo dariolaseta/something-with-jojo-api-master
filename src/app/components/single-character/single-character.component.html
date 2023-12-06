@@ -1,7 +1,9 @@
 <div class="container mx-auto" *ngFor="let characters of charactersArray" [hidden]="charactersArray.length <= 0">
     <mat-card *ngIf="characters.id === id" class="my-4">
-        <mat-card-header>
-            <h1>Nome: {{characters.name}} ( {{ characters.japaneseName }} )</h1>
+        <mat-card-header class="flex justify-between">
+            <h1>{{characters.name}} ( {{ characters.japaneseName }} )</h1>
+
+            <button mat-raised-button color="accent" (click)="openDialog()" matTooltip="Modifica">Modifica</button>
         </mat-card-header>
 
         <img [src]="characters.image" [alt]="characters.name + ' image'">
@@ -22,8 +24,11 @@
         </mat-card-content>
 
         <mat-card-footer>
-            <button mat-raised-button color="primary" routerLink="/characters" matTooltip="Indietro">Indietro</button>
-            <button mat-raised-button color="accent" (click)="openDialog()" matTooltip="Modifica">Modifica</button>
+            <div class="px-3 pb-3">
+                <button mat-raised-button color="primary" routerLink="/characters" matTooltip="Indietro">Indietro</button>
+
+                
+            </div>
         </mat-card-footer>
     </mat-card>
 </div>
