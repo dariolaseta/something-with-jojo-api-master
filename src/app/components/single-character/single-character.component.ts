@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,9 +15,13 @@ export class SingleCharacterComponent implements OnInit {
   charactersArray: any[] = [];
   id!: number;
 
+  myModel = {};
+
   // Edit
   canEdit: boolean = false;
   editedCharacterIndex: number = -1;
+
+  @Output() updatedArray = new EventEmitter<any>();
 
   constructor(
     private route: ActivatedRoute,
