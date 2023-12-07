@@ -13,7 +13,7 @@ export class TableDialogComponent implements OnInit {
   name: string = '';
   ability: string = '';
   id: number = 175;
-  isAlive: boolean = true;
+  isAlive!: boolean;
 
   constructor(
     private dialogRef: MatDialogRef<TableDialogComponent>,

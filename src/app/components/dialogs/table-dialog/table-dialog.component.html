@@ -12,9 +12,9 @@
         
         <mat-form-field>
             <mat-label>In vita</mat-label>
-            <mat-select>
-                <mat-option [value]="isAlive">Vivo</mat-option>
-                <mat-option [value]="isAlive">Morto</mat-option>
+            <mat-select [(ngModel)]="isAlive" required>
+                <mat-option [value]="true">Vivo</mat-option>
+                <mat-option [value]="false">Morto</mat-option>
             </mat-select>
         </mat-form-field>
     </div>

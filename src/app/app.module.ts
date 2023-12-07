@@ -33,6 +33,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { DialogTestComponent } from './components/dialogs/dialog-test/dialog-test.component';
 import { TableDialogComponent } from './components/dialogs/table-dialog/table-dialog.component';
 import { CharacterEditComponent } from './components/dialogs/character-edit/character-edit.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CharacterEditComponent } from './components/dialogs/character-edit/char
     DialogTestComponent,
     TableDialogComponent,
     CharacterEditComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
