@@ -12,7 +12,7 @@ export class TableDialogComponent implements OnInit {
 
   name: string = '';
   ability: string = '';
-  id: number = 175;
+  id!: number;
   isAlive!: boolean;
 
   constructor(
