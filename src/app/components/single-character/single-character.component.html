@@ -6,7 +6,7 @@
             <button mat-raised-button color="accent" (click)="openDialog()" matTooltip="Modifica il personaggio." matTooltipPosition="left">Modifica</button>
         </mat-card-header>
 
-        <img [src]="characters.image" [alt]="characters.name + ' image'">
+        <img [src]="characters.image" [alt]="characters.name + ' image'" class="w-56">
         <mat-card-content>
             <p>Nazionalità: {{characters.nationality}}</p>
             <p>Abilità: {{characters.abilities}}</p>
