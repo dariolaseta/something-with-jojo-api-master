@@ -18,6 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -69,6 +70,7 @@ import { CharacterEditComponent } from './components/dialogs/character-edit/char
     MatTabsModule,
     MatIconModule,
     MatDialogModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
