@@ -16,6 +16,10 @@
         <mat-form-field>
             <input matInput placeholder="Capitoli:" [(ngModel)]="data.chapter" (keyup.enter)="save()" required>
         </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Immagine:" [(ngModel)]="data.image" (keyup.enter)="save()" required>
+        </mat-form-field>
 
         <mat-form-field>
             <mat-label>In vita</mat-label>

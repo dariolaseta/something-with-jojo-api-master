@@ -63,6 +63,7 @@ export class SingleCharacterComponent implements OnInit {
         chapter: this.charactersArray[this.id - 1].chapter,
         living: this.charactersArray[this.id - 1].living,
         id: this.charactersArray[this.id - 1].id,
+        image: this.charactersArray[this.id - 1].image,
       },
       width: '700px',
     });

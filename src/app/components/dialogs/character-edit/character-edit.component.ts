@@ -33,6 +33,7 @@ export class CharacterEditComponent implements OnInit {
       nationality: this.data.nationality,
       chapter: this.data.chapter,
       living: this.data.living,
+      image: this.data.image,
     }
 
     this.apiService.editCharacter(data, this.data.id);
