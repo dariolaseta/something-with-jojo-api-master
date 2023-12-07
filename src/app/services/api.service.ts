@@ -36,4 +36,12 @@ export class ApiService {
       }
     )
   }
+
+  deleteCharacter(id: number) :void {
+    this.http.delete(this.newApiUrl + id, {headers: this.headers}).subscribe(
+      response => {
+        console.log(response);
+      }
+    )
+  }
 }
