@@ -3,6 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { TableDialogComponent } from '../table-dialog/table-dialog.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-character-edit',
@@ -14,10 +15,12 @@ export class CharacterEditComponent implements OnInit {
   constructor(
     private dialogRef: MatDialogRef<TableDialogComponent>,
     private message: MatSnackBar,
+    private apiService: ApiService,
     @Inject(MAT_DIALOG_DATA) public data: any,
     ) { }
 
   ngOnInit(): void {
+    console.log(this.data.id)
   }
 
   closeDialog(){
@@ -33,7 +36,9 @@ export class CharacterEditComponent implements OnInit {
       living: this.data.living,
     }
 
-    this.dialogRef.close(data);
+    this.apiService.editCharacter(data, this.data.id);
+
+    this.dialogRef.close();
 
     this.message.open("Personaggio modificato con successo.", "Chiudi")
   }

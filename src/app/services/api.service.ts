@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   editCharacter(body: any, id: number) : void {
-    this.http.post(this.newApiUrl + '/' + id, body, {headers: this.headers}).subscribe(
+    this.http.patch(this.newApiUrl + '/' + id, body, {headers: this.headers}).subscribe(
       response => {
         console.log(response)
       }

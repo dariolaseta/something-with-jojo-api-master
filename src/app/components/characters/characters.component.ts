@@ -84,4 +84,8 @@ export class CharactersComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
+  fakeData = {
+    name: "papapa",
+    abilities: "flgjg",
+  }
 }
