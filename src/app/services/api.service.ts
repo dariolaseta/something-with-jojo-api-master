@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   apiUrl: string = 'https://stand-by-me.herokuapp.com/api/v1/characters';
-  newApiUrl: string = 'http://localhost:3000/api/users';
+  newApiUrl: string = 'http://localhost:3000/posts';
+
+  headers = new HttpHeaders().set('Content-Type', 'application/json')
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +19,21 @@ export class ApiService {
 
   testMockServer() {
     return this.http.get<any>(this.newApiUrl);
+  }
+
+  createCharacter(body: any) :void {
+    this.http.post(this.newApiUrl, body, {headers: this.headers}).subscribe(
+      response => {
+        console.log(body);
+      }
+    )
+  }
+
+  editCharacter(body: any, id: number) : void {
+    this.http.post(this.newApiUrl + '/' + id, body, {headers: this.headers}).subscribe(
+      response => {
+        console.log(response)
+      }
+    )
   }
 }

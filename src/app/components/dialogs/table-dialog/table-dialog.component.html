@@ -9,6 +9,18 @@
         <mat-form-field>
             <input matInput placeholder="Inserisci l'abilità:" [(ngModel)]="ability" (keyup.enter)="closeDialog()" required>
         </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Inserisci la nazionalità:" [(ngModel)]="nationality" (keyup.enter)="closeDialog()">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Inserisci il capitolo:" [(ngModel)]="chapter" (keyup.enter)="closeDialog()">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Inserisci l'immagine (placeholder):" [(ngModel)]="image" (keyup.enter)="closeDialog()">
+        </mat-form-field>
         
         <mat-form-field>
             <mat-label>In vita</mat-label>

@@ -6,6 +6,8 @@ import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
 import { TableDialogComponent } from '../dialogs/table-dialog/table-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-characters',
@@ -25,10 +27,19 @@ export class CharactersComponent implements OnInit {
   // Sort per paginator
   @ViewChild(MatSort) sort !: MatSort;
 
+  postData = {
+    id: 176,
+    name: 'gino',
+    abilities: 'nenti'
+  }
+
+  headers = new HttpHeaders({'Content-Type': 'application/json'});
+
   constructor(
     private apiService: ApiService,
     private router: Router,
     private dialog: MatDialog,
+    private http: HttpClient
     ) { }
 
   ngOnInit(): void {
@@ -57,9 +68,9 @@ export class CharactersComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+      this.updateTable();
       if(result){
-        this.charactersArray.push(result);
-        this.updateTable();
 
         console.log(result)
       }
