@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": "1",
-      "name": "Jonathan Joestarfhjk",
+      "name": "Jonathan Joestardfgdfg",
       "japaneseName": "ジョナサン・ジョースター",
       "image": "https://jojos-bizarre-api.netlify.app/assets/jonathan.webp",
       "abilities": "Hamon/Ripple, Strength, Zoom Punch, Sunlight Yellow Overdrive, Intelligence, Luck and Pluck",
@@ -2292,6 +2292,62 @@
       "image": "dfgdfgd",
       "id": "177",
       "living": false
+    },
+    {
+      "name": "ty",
+      "abilities": "rtyr",
+      "nationality": "yrtyrt",
+      "chapter": "yrtyrt",
+      "image": "yrtyrty",
+      "id": "178"
+    },
+    {
+      "name": "sdf",
+      "abilities": "sdf",
+      "nationality": "sdf",
+      "chapter": "",
+      "image": "",
+      "id": "179"
+    },
+    {
+      "name": "fdgfghg",
+      "abilities": "gjghj",
+      "nationality": "",
+      "chapter": "",
+      "image": "",
+      "id": "180"
+    },
+    {
+      "name": "sdfsdf",
+      "abilities": "sdfsdf",
+      "nationality": "sdf",
+      "chapter": "",
+      "image": "",
+      "id": "181"
+    },
+    {
+      "name": "sdf",
+      "abilities": "sdf",
+      "nationality": "sdfsdf",
+      "chapter": "",
+      "image": "",
+      "id": "182"
+    },
+    {
+      "name": "ty",
+      "abilities": "rty",
+      "nationality": "",
+      "chapter": "",
+      "image": "",
+      "id": "183"
+    },
+    {
+      "name": "paolo",
+      "abilities": "paoletti",
+      "nationality": "",
+      "chapter": "",
+      "image": "",
+      "id": "184"
     }
   ],
   "comments": [

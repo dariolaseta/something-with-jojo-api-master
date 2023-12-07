@@ -41,6 +41,10 @@ export class CharactersComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.getCharacters();
+  }
+
+  getCharacters() :void{
     this.apiService.getCharactersData().subscribe((response) =>{
       this.charactersArray = response;
       console.log(this.charactersArray);
@@ -66,12 +70,7 @@ export class CharactersComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
-      this.updateTable();
-      if(result){
-
-        console.log(result)
-      }
+      this.getCharacters();
     });
   }
 
