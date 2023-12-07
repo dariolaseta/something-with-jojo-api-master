@@ -30,6 +30,7 @@ export class CharacterEditComponent implements OnInit {
       abilities: this.data.abilities,
       nationality: this.data.nationality,
       chapter: this.data.chapter,
+      living: this.data.living,
     }
 
     this.dialogRef.close(data);

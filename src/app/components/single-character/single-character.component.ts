@@ -56,8 +56,7 @@ export class SingleCharacterComponent implements OnInit {
     this.charactersArray[this.id].abilities = this.charactersArray[this.id].abilities;
     this.charactersArray[this.id].chapter = this.charactersArray[this.id].chapter;
     this.charactersArray[this.id].isHuman = this.charactersArray[this.id].isHuman;
-
-    this.canEdit = false;
+    this.charactersArray[this.id].living = this.charactersArray[this.id].living;
     
     this.successMessage('Salvato con successo.', 'Chiudi');
   }
@@ -73,6 +72,7 @@ export class SingleCharacterComponent implements OnInit {
         abilities: this.charactersArray[this.id - 1].abilities,
         nationality: this.charactersArray[this.id - 1].nationality,
         chapter: this.charactersArray[this.id - 1].chapter,
+        living: this.charactersArray[this.id - 1].living,
       },
       width: '700px',
     });
@@ -83,8 +83,9 @@ export class SingleCharacterComponent implements OnInit {
         this.charactersArray[this.id - 1].abilities = result.abilities;
         this.charactersArray[this.id - 1].nationality = result.nationality;
         this.charactersArray[this.id - 1].chapter = result.chapter;
+        this.charactersArray[this.id - 1].living = result.living;
 
-        console.log(this.charactersArray)
+        console.log('array con personaggio aggiornato: ', this.charactersArray)
       }
     });
   }
