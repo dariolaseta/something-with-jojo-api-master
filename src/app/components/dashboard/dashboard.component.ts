@@ -47,7 +47,4 @@ export class DashboardComponent implements OnInit {
 
     this.gifLink = this.gifLinksArray[randomNum];
   }
-
-  
-
 }

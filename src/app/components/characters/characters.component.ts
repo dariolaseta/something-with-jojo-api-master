@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 import { TableDialogComponent } from '../dialogs/table-dialog/table-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { HttpHeaders } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-characters',
@@ -39,7 +38,6 @@ export class CharactersComponent implements OnInit {
     private apiService: ApiService,
     private router: Router,
     private dialog: MatDialog,
-    private http: HttpClient
     ) { }
 
   ngOnInit(): void {
@@ -82,10 +80,5 @@ export class CharactersComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
 
     this.dataSource.sort = this.sort;
-  }
-
-  fakeData = {
-    name: "papapa",
-    abilities: "flgjg",
   }
 }

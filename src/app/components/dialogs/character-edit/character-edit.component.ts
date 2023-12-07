@@ -20,7 +20,6 @@ export class CharacterEditComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    console.log(this.data.id)
   }
 
   closeDialog(){

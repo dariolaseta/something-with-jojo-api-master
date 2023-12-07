@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   apiUrl: string = 'https://stand-by-me.herokuapp.com/api/v1/characters';
-  newApiUrl: string = 'http://localhost:3000/posts';
+  newApiUrl: string = 'http://localhost:3000/posts/';
 
   headers = new HttpHeaders().set('Content-Type', 'application/json')
 
@@ -24,13 +24,13 @@ export class ApiService {
   createCharacter(body: any) :void {
     this.http.post(this.newApiUrl, body, {headers: this.headers}).subscribe(
       response => {
-        console.log(body);
+        console.log(response);
       }
     )
   }
 
   editCharacter(body: any, id: number) : void {
-    this.http.patch(this.newApiUrl + '/' + id, body, {headers: this.headers}).subscribe(
+    this.http.patch(this.newApiUrl + id, body, {headers: this.headers}).subscribe(
       response => {
         console.log(response)
       }

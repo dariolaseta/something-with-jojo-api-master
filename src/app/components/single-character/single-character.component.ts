@@ -22,8 +22,6 @@ export class SingleCharacterComponent implements OnInit {
   canEdit: boolean = false;
   editedCharacterIndex: number = -1;
 
-  @Output() updatedArray = new EventEmitter<any>();
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -40,25 +38,12 @@ export class SingleCharacterComponent implements OnInit {
 
       if(this.charactersArray[this.id - 1] === undefined){
         this.router.navigate(['/error']);
-
       }
     });
   }
 
   getId(){
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id);
-  }
-
-  saveChanges(): void {
-    this.charactersArray[this.id].name = this.charactersArray[this.id].name;
-    this.charactersArray[this.id].nationality = this.charactersArray[this.id].nationality;
-    this.charactersArray[this.id].abilities = this.charactersArray[this.id].abilities;
-    this.charactersArray[this.id].chapter = this.charactersArray[this.id].chapter;
-    this.charactersArray[this.id].isHuman = this.charactersArray[this.id].isHuman;
-    this.charactersArray[this.id].living = this.charactersArray[this.id].living;
-    
-    this.successMessage('Salvato con successo.', 'Chiudi');
   }
 
   successMessage(message: string, action: string) :void{
