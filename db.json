@@ -2274,6 +2274,15 @@
       "chapter": "Jojolion",
       "living": false,
       "isHuman": true
+    },
+    {
+      "name": "Zeb89",
+      "abilities": "Lezzo",
+      "nationality": "Italia",
+      "chapter": "Youtube 2010",
+      "image": "https://yt3.googleusercontent.com/ytc/APkrFKYBqXpHjGGsAE1V0ahAdFFOYnYvZQHXgPsdF58s7w=s900-c-k-c0x00ffffff-no-rj",
+      "id": "176",
+      "living": true
     }
   ],
   "comments": [

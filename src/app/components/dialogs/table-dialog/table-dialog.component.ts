@@ -53,6 +53,8 @@ export class TableDialogComponent implements OnInit {
   }
 
   successMessage(message: string, action: string) :void{
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, {
+      duration: 1500,
+    });
   }
 }

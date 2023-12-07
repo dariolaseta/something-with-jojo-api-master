@@ -39,7 +39,9 @@ export class CharacterEditComponent implements OnInit {
 
     this.dialogRef.close();
 
-    this.message.open("Personaggio modificato con successo.", "Chiudi")
+    this.message.open("Personaggio modificato con successo.", "Chiudi", {
+      duration: 1500,
+    })
   }
 
 }
