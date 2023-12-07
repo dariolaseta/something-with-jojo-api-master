@@ -33,6 +33,10 @@ export class SingleCharacterComponent implements OnInit {
   ngOnInit(): void {
     this.getId();
 
+    this.getCharacter();
+  }
+
+  getCharacter() :void{
     this.apiService.getCharactersData().subscribe((response) => {
       this.charactersArray = response;
 
@@ -64,15 +68,7 @@ export class SingleCharacterComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // if(result){
-      //   this.charactersArray[this.id - 1].name = result.name;
-      //   this.charactersArray[this.id - 1].abilities = result.abilities;
-      //   this.charactersArray[this.id - 1].nationality = result.nationality;
-      //   this.charactersArray[this.id - 1].chapter = result.chapter;
-      //   this.charactersArray[this.id - 1].living = result.living;
-
-      //   console.log('array con personaggio aggiornato: ', this.charactersArray)
-      // }
+      this.getCharacter();
     });
   }
 }
