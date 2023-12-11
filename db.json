@@ -756,9 +756,9 @@
     },
     {
       "id": "59",
-      "name": "https://jojos-bizarre-api.netlify.app/assets/yuya.png",
+      "name": "Yuya Fungami",
       "japaneseName": "噴上裕也",
-      "image": "yuya.png",
+      "image": "https://jojos-bizarre-api.netlify.app/assets/yuya.png",
       "abilities": "Highway Star, Sense of Smell",
       "nationality": "Japanese",
       "catchphrase": "I am... just so gloriously handsome! Check out this face of mine.",
